@@ -1,14 +1,10 @@
-import { AppRoutes } from "./Routes"
-import Layout from "./layout"
-import { AuthProvider } from "./lib/AuthContext"
+import { Home } from "./pages/Home"
 
 export function App() {
 
   return (
     <>
-      <AuthProvider>
-          <AppRoutes />
-      </AuthProvider>
+      <Home/>
     </>
   )
 }
