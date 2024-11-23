@@ -15,7 +15,7 @@ export function Home() {
                 <div className="sm:h-screen w-full">
                     <header className="w-full flex items-center justify-center">
                         <div>
-                            <img src="src\assets\logo-anjoz.svg" alt="logo-anjoz-productions" />
+                            <img src="assets\logo-anjoz.svg" alt="logo-anjoz-productions" />
                         </div>
                         <div className="flex gap-12 w-[75%] items-center justify-center">
                             <p className="text-xl cursor-pointer">Home</p>
@@ -34,7 +34,7 @@ export function Home() {
                             </div>
                         </div>
                         <div className="sm:w-[50%]">
-                            <img src="src\assets\computador-anjoz.png" alt="computador-anjoz-productions" />
+                            <img src="assets\computador-anjoz.png" alt="computador-anjoz-productions" />
                         </div>
                     </section>
                 </div>
@@ -48,7 +48,7 @@ export function Home() {
 
                         </div>
                         <div className="sm:w-[50%] flex justify-center items-center">
-                            <img src="src\assets\anjoz-anjoz.png" alt="kauã-anjos" />
+                            <img src="assets\anjoz-anjoz.png" alt="kauã-anjos" />
                         </div>
                     </section>
                 </div>
@@ -69,14 +69,14 @@ export function Home() {
                             <Button variant='outline'>Explore os serviços</Button>
                         </div>
                         <div className="sm:w-[50%] flex justify-center items-center">
-                            <img src="src\assets\graficos-anjoz.png" alt="kauã-anjos" />
+                            <img src="assets\graficos-anjoz.png" alt="kauã-anjos" />
                         </div>
                     </section>
                 </div>
                 {/* <div className="px-10 sm:h-screen flex justify-center items-center w-full">
                     <section className="flex justify-between gap-10 p-10 ">
                         <div className="w-[50%] flex justify-center items-center">
-                            <img src="src\assets\graficos-anjoz.png" alt="kauã-anjos" />
+                            <img src="assets\graficos-anjoz.png" alt="kauã-anjos" />
                         </div>
                         <div className="flex flex-col gap-12  w-[50%] ">
                             <div className="flex gap-2 items-center">
@@ -98,7 +98,7 @@ export function Home() {
                 <div className="sm:px-10 sm:h-screen flex justify-center items-center w-full">
                     <section className="flex flex-col sm:flex-row  justify-between gap-10 sm:p-10 ">
                         <div className="sm:w-[50%] flex justify-center items-center">
-                            <img src="src\assets\camera-anjoz.png" alt="kauã-anjos" />
+                            <img src="assets\camera-anjoz.png" alt="kauã-anjos" />
                         </div>
                         <div className="flex flex-col gap-6  sm:w-[50%] ">
                             <div className="flex gap-2 items-center">
@@ -158,9 +158,9 @@ export function Home() {
                                 </h3>
                             </div>
                             <div className="flex sm:flex-row flex-col gap-4 sm:gap-0 justify-between">
-                                <Depoimento nomeEmpresa={"Catunda & Fiuza"} nicho={"Imobiliária"} depoimento={"A Anj0z.Productions fez nossa marca bombar nas redes! O engajamento cresceu muito e a equipe é super atenciosa."} logo={"src\\assets\\catunda-logo.png"} />
-                                <Depoimento className="bg-corPrimariaAnjoz text-white" nomeEmpresa={"Jungle Software"} nicho={"Tecnologia"} depoimento={"Os resultados que tivemos com as campanhas digitais foram incríveis! O pessoal da Anj0z.Productions realmente sabe o que faz."} logo={"src\\assets\\jungle-logo.png"} />
-                                <Depoimento nomeEmpresa={"Crochet By Karla"} nicho={"Artesanato"} depoimento={"Com a ajuda deles, nossa presença digital decolou! Ótimas soluções e sempre pensando no que a gente precisa."} logo={"src\\assets\\crochet-logo.png"} />
+                                <Depoimento nomeEmpresa={"Catunda & Fiuza"} nicho={"Imobiliária"} depoimento={"A Anj0z.Productions fez nossa marca bombar nas redes! O engajamento cresceu muito e a equipe é super atenciosa."} logo={"assets\\catunda-logo.png"} />
+                                <Depoimento className="bg-corPrimariaAnjoz text-white" nomeEmpresa={"Jungle Software"} nicho={"Tecnologia"} depoimento={"Os resultados que tivemos com as campanhas digitais foram incríveis! O pessoal da Anj0z.Productions realmente sabe o que faz."} logo={"assets\\jungle-logo.png"} />
+                                <Depoimento nomeEmpresa={"Crochet By Karla"} nicho={"Artesanato"} depoimento={"Com a ajuda deles, nossa presença digital decolou! Ótimas soluções e sempre pensando no que a gente precisa."} logo={"assets\\crochet-logo.png"} />
                             </div>
                         </div>
 
@@ -226,7 +226,7 @@ export function Home() {
                             </div>
                         </div>
                         <div className="sm:w-[50%] flex justify-center items-center">
-                            <img src="src\assets\camera-pessoa-anjoz.png" alt="kauã-anjos" />
+                            <img src="assets\camera-pessoa-anjoz.png" alt="kauã-anjos" />
                         </div>
                     </section>
                 </div>
