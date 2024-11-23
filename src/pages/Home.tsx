@@ -223,7 +223,7 @@ export function Home() {
                                     planos.map((plano, index) => {
                                         return (
                                             <>
-                                                <Plano key={index} className={plano.className} nomePlano={plano.nomePlano} valor={plano.valorAntigo} valorAntigo={plano.valorAntigo} caracteristicas={plano.caracteristicas} />
+                                                <Plano key={index} className={plano.className} nomePlano={plano.nomePlano} valor={plano.valor} valorAntigo={plano.valorAntigo} caracteristicas={plano.caracteristicas} />
                                             </>
                                         )
                                     })
