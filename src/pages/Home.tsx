@@ -7,24 +7,50 @@ import { GraduationCap, Grid2x2Plus, ShieldCheck } from "lucide-react";
 import { planos } from "./planos";
 import { Plano } from "@/components/Plano";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export function Home() {
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <>
             <div className="flex flex-col gap-14 p-4 justify-center  w-full">
                 <div className="sm:h-screen w-full">
-                    <header className="w-full flex items-center justify-center">
+                    <header className="w-full flex items-center justify-between px-4 py-3 sm:py-0 ">
+
                         <div>
-                            <img src="assets\logo-anjoz.svg" alt="logo-anjoz-productions" />
+                            <img src="/assets/logo-anjoz.svg" alt="logo-anjoz-productions" className="h-14 sm:h-auto" />
                         </div>
-                        <div className="flex gap-12 w-[75%] items-center justify-center">
-                            <p className="text-xl cursor-pointer">Home</p>
-                            <p className="text-xl cursor-pointer">Serviços</p>
-                            <p className="text-xl cursor-pointer">Ajuda</p>
+
+                        <div className="sm:hidden">
+                            <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Abrir Menu">
+                                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                            </button>
                         </div>
-                        <Button className="bg-corPrimariaAnjoz">Contato</Button>
+
+                        <nav
+                            className={`${isMenuOpen ? "block" : "hidden"
+                                } absolute top-20 left-0 w-full sm:static ${isMenuOpen ? 'bg-white p-4 shadow-xl' : ''}  sm:flex sm:items-center sm:gap-12 sm:w-auto`}
+                        >
+                            <ul className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+                                <li className="text-xl cursor-pointer">
+                                    <a href="#home">Home</a>
+                                </li>
+                                <li className="text-xl cursor-pointer">
+                                    <a href="#servicos">Serviços</a>
+                                </li>
+                                <li className="text-xl cursor-pointer">
+                                    <a href="#ajuda">Ajuda</a>
+                                </li>
+                                <li>
+                                    <Button className="bg-corPrimariaAnjoz">Contato</Button>
+                                </li>
+                            </ul>
+                        </nav>
                     </header>
-                    <section className="flex-col sm:flex-row flex justify-between items-center sm:h-[80%] sm:gap-10 ">
+                    <section className="flex-col sm:flex-row flex justify-between items-center sm:h-[80%] gap-10 ">
                         <div className="flex flex-col gap-6 sm:gap-12 sm:pl-10 justify-center items-center sm:w-[50%]">
                             <h1 className="font-semibold text-4xl md:text-6xl ">Sua marca com inovação & estratégia</h1>
                             <h3 className="text-[#575757] text-xl ">Impulsionando o Sucesso da Sua Empresa com Soluções Estratégicas e Personalizadas em Marketing Digital para Cada Negócio</h3>
@@ -95,7 +121,7 @@ export function Home() {
 
                     </section>
                 </div> */}
-                <div className="sm:px-10 sm:h-screen flex justify-center items-center w-full">
+                <div id="servicos" className="sm:px-10 sm:h-screen flex justify-center items-center w-full">
                     <section className="flex flex-col sm:flex-row  justify-between gap-10 sm:p-10 ">
                         <div className="sm:w-[50%] flex justify-center items-center">
                             <img src="assets\camera-anjoz.png" alt="kauã-anjos" />
@@ -191,7 +217,7 @@ export function Home() {
                                     Escolha o plano ideal para você e impulsione seus resultados!
                                 </h3>
                             </div>
-                            
+
                             <div className="flex sm:flex-row flex-col gap-4 sm:gap-0 justify-between sm:items-center">
                                 {
                                     planos.map(plano => {
