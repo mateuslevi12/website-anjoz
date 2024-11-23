@@ -220,10 +220,10 @@ export function Home() {
 
                             <div className="flex sm:flex-row flex-col gap-4 sm:gap-0 justify-between sm:items-center">
                                 {
-                                    planos.map(plano => {
+                                    planos.map((plano, index) => {
                                         return (
                                             <>
-                                                <Plano className={plano.className} nomePlano={plano.nomePlano} valor={plano.valorAntigo} valorAntigo={plano.valorAntigo} caracteristicas={plano.caracteristicas} />
+                                                <Plano key={index} className={plano.className} nomePlano={plano.nomePlano} valor={plano.valorAntigo} valorAntigo={plano.valorAntigo} caracteristicas={plano.caracteristicas} />
                                             </>
                                         )
                                     })

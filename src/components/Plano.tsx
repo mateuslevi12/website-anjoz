@@ -16,7 +16,7 @@ export interface IPlano extends HTMLAttributes<HTMLDivElement> {
 export function Plano({ caracteristicas, nomePlano, valor, valorAntigo, className }: IPlano) {
     return (
         <>
-            <Card className={`p-4 flex flex-col gap-6 sm:w-[30%] sm:${className}`}>
+            <Card className={`p-4 flex flex-col gap-6 sm:w-[30%] ${className}`}>
                 <div className="flex flex-col gap-1">
                     <p className="font-bold text-xs sm:text-sm">{nomePlano}</p>
                     <p className="font-bold text-2xl sm:text-4xl">{valor}</p>

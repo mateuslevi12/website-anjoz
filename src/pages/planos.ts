@@ -3,7 +3,7 @@ import { IPlano } from "@/components/Plano";
 export const planos: IPlano[] = [
     {
       nomePlano: "BRONZE (15 dias)",
-      className: "h-[45vh]",
+      className: "sm:h-[45vh]",
       valor: "R$ 129,99",
       valorAntigo: "R$ 164,99",
       caracteristicas: [
@@ -14,7 +14,7 @@ export const planos: IPlano[] = [
     },
     {
       nomePlano: "PLATINUM (3 meses)",
-      className: "h-[55vh]",
+      className: "sm:h-[55vh]",
       valor: "R$ 599,99",
       valorAntigo: "R$ 718,99",
       caracteristicas: [
@@ -25,7 +25,7 @@ export const planos: IPlano[] = [
     },
     {
       nomePlano: "GOLD (1 mês)",
-      className: "h-[45vh]",
+      className: "sm:h-[45vh]",
       valor: "R$ 221,99",
       valorAntigo: "R$ 265,22",
       caracteristicas: [
