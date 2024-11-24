@@ -3,7 +3,7 @@ import { Solucao } from "@/components/Solucao";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { GraduationCap, Grid2x2Plus, ShieldCheck } from "lucide-react";
+import { Facebook, GraduationCap, Grid2x2Plus, Instagram, Mail, ShieldCheck } from "lucide-react";
 import { planos } from "./planos";
 import { Plano } from "@/components/Plano";
 import { Textarea } from "@/components/ui/textarea";
@@ -37,12 +37,35 @@ export function Home() {
             descricao: 'Explore o incrível decorado do projeto Sensia.',
         },
     ];
-    
+
+    const [bodyWhatsApp, setBodyWhatsApp] = useState<{
+        nomeEmpresa: string,
+        telefone: string,
+        email: string,
+        conteudo: string
+    }>({
+        nomeEmpresa: '',
+        telefone: '',
+        email: '',
+        conteudo: '',
+    })
+
+    function enviarMensagem() {
+        const phoneNumber = "5585996653892"; 
+        const message = 
+        `*Nome da Empresa*: ${bodyWhatsApp.nomeEmpresa}\n
+        *Email*: ${bodyWhatsApp.email}\n
+        *Telefone*: ${bodyWhatsApp.telefone}\n
+        *Descrição*: ${bodyWhatsApp.conteudo}`.replace(/^\s+/gm, '').trim();
+
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
+    };
 
     return (
         <>
-            <div className="flex flex-col gap-14 p-4 justify-center  w-full">
-                <div className="sm:h-screen w-full">
+            <div className="flex flex-col gap-14  justify-center  w-full">
+                <div className="p-4 sm:h-screen w-full">
                     <header className="w-full flex items-center justify-between px-4 py-3 sm:py-0 ">
 
                         <div>
@@ -89,7 +112,7 @@ export function Home() {
                         </div>
                     </section>
                 </div>
-                <div className="sm:px-10 sm:h-screen flex justify-center items-center w-full">
+                <div id="quem-somos" className="p-4 sm:px-10 sm:h-screen flex justify-center items-center w-full">
                     <section className="flex flex-col sm:flex-row justify-between gap-10 p-10 rounded-tl-3xl rounded-br-3xl bg-corPrimariaAnjoz rounded">
                         <div className="flex flex-col gap-12  sm:w-[50%] ">
                             <h2 className="text-white font-semibold text-3xl md:text-6xl ">Quem somos</h2>
@@ -103,7 +126,7 @@ export function Home() {
                         </div>
                     </section>
                 </div>
-                <div className="sm:px-10 sm:h-screen flex justify-center items-center w-full">
+                <div id="experiencia" className="p-4 sm:px-10 sm:h-screen flex justify-center items-center w-full">
                     <section className="flex flex-col sm:flex-row justify-between gap-10 sm:p-10 ">
                         <div className="flex flex-col gap-12 sm:w-[50%]">
                             <div className="flex gap-2 items-center">
@@ -117,26 +140,26 @@ export function Home() {
                             <h3>
                                 Estamos comprometidos em fornecer orientações especializadas, estratégias comprovadas e uma abordagem personalizada para garantir o crescimento sustentável da sua marca.
                             </h3>
-                            <Button variant='outline'>Explore os serviços</Button>
+                            <a href="#solucoes" className="w-full"><Button className="w-full" variant='outline'>Explore os serviços</Button></a>
                         </div>
                         <div className="sm:w-[50%] flex justify-center items-center">
                             <img src="assets\graficos-anjoz.png" alt="kauã-anjos" />
                         </div>
                     </section>
                 </div>
-                <div className="px-10 sm:h-screen flex justify-center items-center w-full">
+                <div id="ultimos-trabalhos" className="px-10 sm:h-screen flex justify-center items-center w-full">
                     <section className="flex justify-between gap-10 sm:p-10 w-full ">
-                        
+
                         <div className="flex flex-col gap-12  w-full">
-                            
+
                             <h2 className="font-semibold text-2xl md:text-5xl">Últimos trabalhos</h2>
 
-                           <Carrossel video={videos} />
+                            <Carrossel video={videos} />
                         </div>
 
                     </section>
                 </div>
-                <div id="servicos" className="sm:px-10 sm:h-screen flex justify-center items-center w-full">
+                <div id="servicos" className="p-4 sm:px-10 sm:h-screen flex justify-center items-center w-full">
                     <section className="flex flex-col sm:flex-row  justify-between gap-10 sm:p-10 ">
                         <div className="sm:w-[50%] flex justify-center items-center">
                             <img src="assets\camera-anjoz.png" alt="kauã-anjos" />
@@ -184,7 +207,7 @@ export function Home() {
 
                     </section>
                 </div>
-                <div className="sm:px-10 sm:h-screen flex justify-center items-center w-full">
+                <div id="testemunhas" className="p-4 sm:px-10 sm:h-screen flex justify-center items-center w-full">
                     <section className="flex justify-between gap-10 sm:p-10 ">
 
                         <div className="flex flex-col gap-12  ">
@@ -207,7 +230,7 @@ export function Home() {
 
                     </section>
                 </div>
-                <div className="sm:px-10 sm:h-screen flex justify-center items-center w-full">
+                <div id="solucoes" className="p-4 sm:px-10 sm:h-screen flex justify-center items-center w-full">
                     <section className="flex justify-between gap-10 sm:p-10 ">
 
                         <div className="flex flex-col gap-20  ">
@@ -223,7 +246,7 @@ export function Home() {
 
                     </section>
                 </div>
-                <div className="sm:px-10 sm:h-screen flex justify-center items-center  w-full">
+                <div id="precos" className="p-4 sm:px-10 sm:h-screen flex justify-center items-center  w-full">
                     <section className="flex justify-between gap-10 sm:p-10  w-full">
                         <div className="flex flex-col gap-12 w-full ">
                             <div className="sm:w-[60%] flex flex-col gap-2">
@@ -248,7 +271,7 @@ export function Home() {
 
                     </section>
                 </div>
-                <div className="sm:px-10 sm:h-screen flex flex-col gap-6 justify-center w-full">
+                <div id="contato" className="p-4 sm:px-10 sm:h-screen flex flex-col gap-6 justify-center w-full">
                     <h2 className="font-semibold md:text-5xl">Contato</h2>
                     <section className="flex flex-col sm:flex-row justify-between gap-10 p-10  bg-corPrimariaAnjoz rounded-xl">
                         <div className="flex flex-col gap-10  sm:w-[50%] ">
@@ -259,15 +282,43 @@ export function Home() {
                                 </h3>
                             </div>
                             <div className="flex flex-col gap-3">
-                                <Input className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" placeholder="Nome da empresa" />
-                                <Input className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" placeholder="Email" />
-                                <Input className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" placeholder="Telefone" />
-                                <Textarea className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" rows={5} placeholder="Breve descrição sobre sua empresa." />
-                                <Button className="bg-[#0051FF]">Enviar</Button>
+                                <Input onChange={(e) => setBodyWhatsApp({ ...bodyWhatsApp, nomeEmpresa: e.target.value })} className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" placeholder="Nome da empresa" />
+                                <Input onChange={(e) => setBodyWhatsApp({ ...bodyWhatsApp, email: e.target.value })} className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" placeholder="Email" />
+                                <Input onChange={(e) => setBodyWhatsApp({ ...bodyWhatsApp, telefone: e.target.value })} className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" placeholder="Telefone" />
+                                <Textarea onChange={(e) => setBodyWhatsApp({ ...bodyWhatsApp, conteudo: e.target.value })} className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" rows={5} placeholder="Breve descrição sobre sua empresa." />
+                                <Button className="bg-[#0051FF]" onClick={() => enviarMensagem()}>Enviar</Button>
                             </div>
                         </div>
                         <div className="sm:w-[50%] flex justify-center items-center">
                             <img src="assets\camera-pessoa-anjoz.png" alt="kauã-anjos" />
+                        </div>
+                    </section>
+                </div>
+                <div className="  flex  gap-6 justify-center w-full ">
+                    <section className="flex sm:flex-row w-full items-center  gap-10 p-10  bg-corPrimariaAnjoz ">
+                        <div className="w-full flex flex-col items-center justify-center ">
+                            <img src="/assets/logo-anjoz-branca.svg" alt="logo-anjoz-productions" className="h-14 sm:h-auto " />
+                            <div className="flex flex-col items-center justify-center gap-6 ">
+                                <p className="text-white text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 lg:gap-8 p-4">
+                                    <a href="#quem-somos" className="text-white text-sm sm:text-base">Quem somos</a>
+                                    <a href="#experiencia" className="text-white text-sm sm:text-base">Experiência</a>
+                                    <a href="#ultimos-trabalhos" className="text-white text-sm sm:text-base">Últimos trabalhos</a>
+                                    <a href="#servicos" className="text-white text-sm sm:text-base">Serviços</a>
+                                    <a href="#testemunhas" className="text-white text-sm sm:text-base">Testemunhas</a>
+                                    <a href="#solucoes" className="text-white text-sm sm:text-base">Soluções</a>
+                                    <a href="#precos" className="text-white text-sm sm:text-base">Preços</a>
+                                    <a href="#contato" className="text-white text-sm sm:text-base">Contato</a>
+                                </div>
+
+
+                                <div className="flex items-center gap-4">
+                                    <a href="https://www.instagram.com/anj0z.productions/"><Instagram color="white" /></a>
+                                    <Mail color="white" />
+                                    <Facebook color="white" />
+                                </div>
+
+                            </div>
                         </div>
                     </section>
                 </div>
