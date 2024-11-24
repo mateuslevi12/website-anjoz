@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "vercel-build": "GIT_TERMINAL_PROMPT=0 GIT_LFS_AUTH=$GIT_LFS_AUTH git lfs pull && next build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
