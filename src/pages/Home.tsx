@@ -9,10 +9,35 @@ import { Plano } from "@/components/Plano";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Carrossel } from "@/components/Carrossel";
 
 export function Home() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const videos = [
+        {
+            url: '/assets/video-1-anjoz.mp4',
+            titulo: 'Brasilidade Urbanismo',
+            descricao: 'Uma descrição incrível para Brasilidade Urbanismo.',
+        },
+        {
+            url: '/assets/Caio-Thai Terra Brasilis .mp4',
+            titulo: 'Caio Thai Terra Brasilis',
+            descricao: 'Veja como o projeto Terra Brasilis foi desenvolvido.',
+        },
+        {
+            url: '/assets/THAI-TERRA BRASILIS.mp4',
+            titulo: 'THAI Terra Brasilis',
+            descricao: 'Um vídeo detalhado sobre o THAI Terra Brasilis.',
+        },
+        {
+            url: '/assets/Decorado-Sensia.mp4',
+            titulo: 'Decorado Sensia',
+            descricao: 'Explore o incrível decorado do projeto Sensia.',
+        },
+    ];
+    
 
     return (
         <>
@@ -99,28 +124,18 @@ export function Home() {
                         </div>
                     </section>
                 </div>
-                {/* <div className="px-10 sm:h-screen flex justify-center items-center w-full">
-                    <section className="flex justify-between gap-10 p-10 ">
-                        <div className="w-[50%] flex justify-center items-center">
-                            <img src="assets\graficos-anjoz.png" alt="kauã-anjos" />
-                        </div>
-                        <div className="flex flex-col gap-12  w-[50%] ">
-                            <div className="flex gap-2 items-center">
-                                <p className="bg-[#20cfc644] font-semibold text-[#072668] p-1">EXPERIÊNCIA</p>
-                                <Separator color="black" className="w-[10%] bg-black" />
-                            </div>
-                            <h2 className="font-semibold md:text-5xl">Transformando Empresas com Soluções Estratégicas de Marketing Digital</h2>
-                            <h3 className="text-xl ">
-                                Guiamos sua marca no caminho para o sucesso digital por meio de estratégias personalizadas e inovadoras. Alavanque seus resultados com abordagens baseadas em dados e garanta uma presença digital forte e impactante, mesmo em um cenário digital em constante evolução.
-                            </h3>
-                            <h3>
-                                Estamos comprometidos em fornecer orientações especializadas, estratégias comprovadas e uma abordagem personalizada para garantir o crescimento sustentável da sua marca.
-                            </h3>
-                            <Button variant='outline'>Explore os serviços</Button>
+                <div className="px-10 sm:h-screen flex justify-center items-center w-full">
+                    <section className="flex justify-between gap-10 sm:p-10 w-full ">
+                        
+                        <div className="flex flex-col gap-12  w-full">
+                            
+                            <h2 className="font-semibold text-2xl md:text-5xl">Últimos trabalhos</h2>
+
+                           <Carrossel video={videos} />
                         </div>
 
                     </section>
-                </div> */}
+                </div>
                 <div id="servicos" className="sm:px-10 sm:h-screen flex justify-center items-center w-full">
                     <section className="flex flex-col sm:flex-row  justify-between gap-10 sm:p-10 ">
                         <div className="sm:w-[50%] flex justify-center items-center">
