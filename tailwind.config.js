@@ -17,6 +17,7 @@ module.exports = {
 			}
 		},
 		extend: {
+			
 			colors: {
 				corPrimariaAnjoz: {
 					DEFAULT: "#072668", 
@@ -70,7 +71,7 @@ module.exports = {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
-			},
+			},	
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -87,11 +88,19 @@ module.exports = {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				vibrate: {
+					'0%': { transform: 'translateX(0)' },
+					'25%': { transform: 'translateX(-2px)' },
+					'50%': { transform: 'translateX(2px)' },
+					'75%': { transform: 'translateX(-2px)' },
+					'100%': { transform: 'translateX(0)' },
+				  },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'vibrate': 'vibrate 0.2s infinite',
 			}
 		}
 	},

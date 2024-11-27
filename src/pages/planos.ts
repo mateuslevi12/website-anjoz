@@ -14,7 +14,7 @@ export const planos: IPlano[] = [
     },
     {
       nomePlano: "PLATINUM (3 meses)",
-      className: "sm:h-[55vh]",
+      className: "sm:h-[55vh] border-[#7C67FE]",
       valor: "R$ 599,99",
       valorAntigo: "R$ 718,99",
       caracteristicas: [

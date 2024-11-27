@@ -51,9 +51,9 @@ export function Home() {
     })
 
     function enviarMensagem() {
-        const phoneNumber = "5585996653892"; 
-        const message = 
-        `*Nome da Empresa*: ${bodyWhatsApp.nomeEmpresa}\n
+        const phoneNumber = "5585996653892";
+        const message =
+            `*Nome da Empresa*: ${bodyWhatsApp.nomeEmpresa}\n
         *Email*: ${bodyWhatsApp.email}\n
         *Telefone*: ${bodyWhatsApp.telefone}\n
         *Descrição*: ${bodyWhatsApp.conteudo}`.replace(/^\s+/gm, '').trim();
@@ -83,18 +83,17 @@ export function Home() {
                                 } absolute top-20 left-0 w-full sm:static ${isMenuOpen ? 'bg-white p-4 shadow-xl' : ''}  sm:flex sm:items-center sm:gap-12 sm:w-auto`}
                         >
                             <ul className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
-                                <li className="text-xl cursor-pointer">
-                                    <a href="#home">Home</a>
-                                </li>
-                                <li className="text-xl cursor-pointer">
-                                    <a href="#servicos">Serviços</a>
-                                </li>
-                                <li className="text-xl cursor-pointer">
-                                    <a href="#ajuda">Ajuda</a>
-                                </li>
-                                <li>
+                                <a href="#quem-somos" className=" text-sm sm:text-base transition-transform transform hover:translate-y-[-5px]">Quem somos</a>
+                                <a href="#experiencia" className=" text-sm sm:text-base transition-transform transform hover:translate-y-[-5px]">Experiência</a>
+                                <a href="#ultimos-trabalhos" className=" text-sm sm:text-base transition-transform transform hover:translate-y-[-5px]">Últimos trabalhos</a>
+                                <a href="#servicos" className=" text-sm sm:text-base transition-transform transform hover:translate-y-[-5px]">Serviços</a>
+                                <a href="#testemunhas" className=" text-sm sm:text-base transition-transform transform hover:translate-y-[-5px]">Testemunhas</a>
+                                <a href="#solucoes" className=" text-sm sm:text-base transition-transform transform hover:translate-y-[-5px]">Soluções</a>
+                                <a href="#precos" className=" text-sm sm:text-base transition-transform transform hover:translate-y-[-5px]">Preços</a>
+                                <a href="#contato" className=" text-sm sm:text-base transition-transform transform hover:translate-y-[-5px]">Contato</a>
+                                {/* <li>
                                     <Button className="bg-corPrimariaAnjoz">Contato</Button>
-                                </li>
+                                </li> */}
                             </ul>
                         </nav>
                     </header>
@@ -103,8 +102,10 @@ export function Home() {
                             <h1 className="font-semibold text-4xl md:text-6xl ">Sua marca com inovação & estratégia</h1>
                             <h3 className="text-[#575757] text-xl ">Impulsionando o Sucesso da Sua Empresa com Soluções Estratégicas e Personalizadas em Marketing Digital para Cada Negócio</h3>
                             <div className="flex gap-2 w-full h-14">
-                                <Input placeholder="Seu email" className="h-auto" />
-                                <Button className="bg-corPrimariaAnjoz px-6 h-auto">Enviar</Button>
+                                <Input placeholder="Seu email" className="h-auto" type="email" onChange={(e) => setBodyWhatsApp({ ...bodyWhatsApp, email: e.target.value })} />
+                                <a href="#contato" className="h-full">
+                                    <Button type="button" disabled={!bodyWhatsApp.email} className="bg-corPrimariaAnjoz px-6 h-full">Enviar</Button>
+                                </a>
                             </div>
                         </div>
                         <div className="sm:w-[50%]">
@@ -283,7 +284,7 @@ export function Home() {
                             </div>
                             <div className="flex flex-col gap-3">
                                 <Input onChange={(e) => setBodyWhatsApp({ ...bodyWhatsApp, nomeEmpresa: e.target.value })} className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" placeholder="Nome da empresa" />
-                                <Input onChange={(e) => setBodyWhatsApp({ ...bodyWhatsApp, email: e.target.value })} className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" placeholder="Email" />
+                                <Input defaultValue={bodyWhatsApp.email} type="email" onChange={(e) => setBodyWhatsApp({ ...bodyWhatsApp, email: e.target.value })} className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" placeholder="Email" />
                                 <Input onChange={(e) => setBodyWhatsApp({ ...bodyWhatsApp, telefone: e.target.value })} className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" placeholder="Telefone" />
                                 <Textarea onChange={(e) => setBodyWhatsApp({ ...bodyWhatsApp, conteudo: e.target.value })} className="text-white bg-blue-900 border-[#d4d8ff7a] placeholder:text-[#d4d8ffab]" rows={5} placeholder="Breve descrição sobre sua empresa." />
                                 <Button className="bg-[#0051FF]" onClick={() => enviarMensagem()}>Enviar</Button>
@@ -299,7 +300,7 @@ export function Home() {
                         <div className="w-full flex flex-col items-center justify-center ">
                             <img src="/assets/logo-anjoz-branca.svg" alt="logo-anjoz-productions" className="h-14 sm:h-auto " />
                             <div className="flex flex-col items-center justify-center gap-6 ">
-                                <p className="text-white text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                {/* <p className="text-white text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p> */}
                                 <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 lg:gap-8 p-4">
                                     <a href="#quem-somos" className="text-white text-sm sm:text-base">Quem somos</a>
                                     <a href="#experiencia" className="text-white text-sm sm:text-base">Experiência</a>
